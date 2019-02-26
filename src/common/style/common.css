@@ -1,0 +1,326 @@
+/**
+ * Eric Meyer's Reset CSS v2.0 (http://meyerweb.com/eric/tools/css/reset/)
+ * http://cssreset.com
+ */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+input {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-size: 1em;
+}
+blockquote,
+q {
+  quotes: none;
+}
+.crumbs {
+  padding: 0;
+  display: inline-block;
+  line-height: 20px;
+}
+.el-icon-info {
+  margin-right: 10px;
+}
+
+.el-menu-item-group .el-menu-item-group__title {
+  padding: 0px !important;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* custom */
+a {
+  color: #7e8c8d;
+  text-decoration: none;
+  -webkit-backface-visibility: hidden;
+}
+li {
+  list-style: none;
+}
+/* 滚动条 */
+::-webkit-scrollbar {
+  /*垂直滚动条的宽*/
+  width: 10px;
+  /*垂直滚动条的高*/
+  height: 10px;
+}
+
+::-webkit-scrollbar-track-piece {
+  /*修改滚动条的背景和圆角*/
+  background: #F7F7F7;
+  -webkit-border-radius: 7px;
+}
+
+/*修改垂直滚动条的样式*/
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #dcdfe6;
+  -webkit-border-radius: 7px;
+}
+
+/*修改水平滚动条的样式*/
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: #dcdfe6;
+  -webkit-border-radius: 7px;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+/* IE7 */
+
+input:focus,
+a:focus,
+button:focus,
+textarea:focus {
+  outline: none
+}
+
+::-ms-clear {
+  display: none;
+}
+
+::-ms-reveal {
+  display: none;
+}
+
+.on-focus:focus {
+  border: 1px solid #5BC0DE;
+}
+
+/*清除浮动*/
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+  font-size: 0;
+}
+.el-select__tags {
+  max-width: 168px!important;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.el-tag{
+  max-width: 120px!important;
+}
+.el-select__tags-text{
+  display: inline-block;
+  max-width: 85px!important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.el-select .el-tag__close.el-icon-close{
+  display: inline-block;
+  top: -6px;
+}
+/*表头td*/
+
+.el-table th {
+  padding: 12px 0px;
+}
+
+/*表格tr*/
+
+.el-table td {
+  padding: 4px 0px;
+}
+
+.el-table__row {
+  height: 40px;
+}
+
+/*列表外边距*/
+
+.spaceTable {
+  margin: 0 20px;
+}
+
+/*-----弹框-------*/
+.el-dialog__header {
+  background-color: #67A0FF;
+  height: 40px;
+  padding: 0px 0px;
+  line-height: 40px;
+}
+
+.el-dialog__title {
+  color: #fff;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.el-dialog__headerbtn {
+  top: 10px;
+}
+
+.el-dialog__headerbtn .el-dialog__close {
+  color: #fff;
+}
+
+.el-dialog__headerbtn .el-dialog__close:hover {
+  color: #fff;
+}
+
+.el-dialog--center .el-dialog__body {
+  padding: 12px 25px 13px;
+}
+
+.el-table th,
+.el-table thead tr {
+  background-color: #EEF0F9;
+}
+
+/*输入框高度*/
+.el-input__inner {
+  padding: 0 24px 0 10px;
+  font-size: 14px !important;
+  /*height: 34px !important;*/
+  /*line-height: 34px;*/
+}
+.el-textarea__inner{
+  padding: 10px;
+  height: 100%;
+  /*font-size: 14px !important;*/
+  resize: none;
+}
+
+/* Tabel */
+.el-pagination,
+.el-pager,
+.el-pagination__total,
+.el-pager, .number,
+.el-pagination__jump,
+.el-pagination__sizes,
+.el-pagination button {
+  height: 40px !important;
+  line-height: 40px !important;
+}
+.el-pagination__total{
+  margin-left: 20px;
+}
+.select-citywidth .el-select-dropdown .el-scrollbar .el-select-dropdown__list {
+  max-width:  240px;
+}

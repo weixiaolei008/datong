@@ -1,0 +1,352 @@
+{
+  "注释":{
+    "color": "颜色",
+    "driveMode": "驱动方式",
+    "type": "车型",
+    "category": "车辆种类",
+    "pointLocation": "点位信息",
+    "windowStatus": "窗口状态",
+    "planStatus": "计划状态",
+    "isBoole": "是否判断",
+    "isDel": "是否删除",
+    "warehouseId": "仓库",
+    "transportWay": "运输工具",
+    "functionalZoneId": "功能区"
+  },
+  "color": [
+    {
+      "tsDataDicId": "N",
+      "name": "黑色"
+    },
+    {
+      "tsDataDicId": "D",
+      "name": "暖白"
+    },
+    {
+      "tsDataDicId": "K",
+      "name": "校车黄"
+    },
+    {
+      "tsDataDicId": "Q",
+      "name": "金属黑"
+    },
+    {
+      "tsDataDicId": "A",
+      "name": "浅金色"
+    },
+    {
+      "tsDataDicId": "C",
+      "name": "深金色"
+    },
+    {
+      "tsDataDicId": "B",
+      "name": "水性蓝"
+    },
+    {
+      "tsDataDicId": "E",
+      "name": "宝石蓝"
+    },
+    {
+      "tsDataDicId": "R",
+      "name": "玛瑙红"
+    },
+    {
+      "tsDataDicId": "P",
+      "name": "橄榄绿"
+    },
+    {
+      "tsDataDicId": "F",
+      "name": "暖银/星河银"
+    },
+    {
+      "tsDataDicId": "G",
+      "name": "金属灰/铁灰"
+    },
+    {
+      "tsDataDicId": "H",
+      "name": "水性水晶紫金属漆"
+    },
+    {
+      "tsDataDicId": "J",
+      "name": "水性棕色金属漆"
+    },
+    {
+      "tsDataDicId": "9",
+      "name": "SVO特殊颜色"
+    }
+  ],
+  "driveMode": [
+    {
+      "tsDataDicId": "a",
+      "name": "柴油"
+    },
+    {
+      "tsDataDicId": "b",
+      "name": "氢能源"
+    },
+    {
+      "tsDataDicId": "c",
+      "name": "电动"
+    },
+    {
+      "tsDataDicId": "d",
+      "name": "汽油"
+    }
+  ],
+  "type": [
+    {
+      "tsDataDicId": "61",
+      "name": "V80"
+    },
+    {
+      "tsDataDicId": "62",
+      "name": "V80底盘"
+    },
+    {
+      "tsDataDicId": "68",
+      "name": "氢能源"
+    },
+    {
+      "tsDataDicId": "69",
+      "name": "EV80"
+    },
+    {
+      "tsDataDicId": "71",
+      "name": "G10"
+    },
+    {
+      "tsDataDicId": "81",
+      "name": "T60"
+    },
+    {
+      "tsDataDicId": "91",
+      "name": "D90"
+    }
+  ],
+  "category": [
+    {
+      "tsDataDicId": "A",
+      "name": "不改装"
+    },
+    {
+      "tsDataDicId": "B",
+      "name": "厂内线上改装"
+    },
+    {
+      "tsDataDicId": "C",
+      "name": "厂内线下改装"
+    },
+    {
+      "tsDataDicId": "D",
+      "name": "委外改装"
+    },
+    {
+      "tsDataDicId": "E",
+      "name": "合格证打印"
+    },
+    {
+      "tsDataDicId": "F",
+      "name": "A-P(PPO改制)"
+    },
+    {
+      "tsDataDicId": "G",
+      "name": "A-R(房车)"
+    }
+  ],
+  "pointLocation": [
+    {
+      "tsDataDicId": "60",
+      "name": "总装上线"
+    },
+    {
+      "tsDataDicId": "80",
+      "name": "缺件车"
+    },
+    {
+      "tsDataDicId": "90",
+      "name": "质检上线"
+    },
+    {
+      "tsDataDicId": "91",
+      "name": "委外改装出"
+    },
+    {
+      "tsDataDicId": "93",
+      "name": "委外改装回"
+    },
+    {
+      "tsDataDicId": "95",
+      "name": "合格证打印"
+    }
+  ],
+  "windowStatus": [
+    {
+      "tsDataDicId": "1",
+      "name": "待执行"
+    },
+    {
+      "tsDataDicId": "2",
+      "name": "执行中"
+    },
+    {
+      "tsDataDicId": "3",
+      "name": "已执行"
+    }
+  ],
+  "planStatus": [
+    {
+      "tsDataDicId": "1",
+      "name": "待执行"
+    },
+    {
+      "tsDataDicId": "2",
+      "name": "执行中"
+    },
+    {
+      "tsDataDicId": "3",
+      "name": "已执行"
+    },
+    {
+      "tsDataDicId": "4",
+      "name": "终止"
+    },
+    {
+      "tsDataDicId": "5",
+      "name": "暂停"
+    }
+  ],
+  "isDel": [
+    {
+      "tsDataDicId": "0",
+      "name": "未删除"
+    },
+    {
+      "tsDataDicId": "1",
+      "name": "已删除"
+    }
+  ],
+  "isBoole": [
+    {
+      "tsDataDicId": "0",
+      "name": "是"
+    },
+    {
+      "tsDataDicId": "1",
+      "name": "否"
+    }
+  ],
+  "warehouseId": [
+    {
+      "tsDataDicId": "100",
+      "name": "河东"
+    },
+    {
+      "tsDataDicId": "101",
+      "name": "长安"
+    },
+    {
+      "tsDataDicId": "102",
+      "name": "张泾"
+    }
+  ],
+  "transportWay": [
+    {
+      "tsDataDicId": "0001",
+      "name": "板车"
+    },
+    {
+      "tsDataDicId": "0002",
+      "name": "拖车"
+    },
+    {
+      "tsDataDicId": "0003",
+      "name": "地跑"
+    }
+  ],
+  "functionalZoneId": [
+    {
+      "tsDataDicId": "00001",
+      "name": "存储区"
+    },
+    {
+      "tsDataDicId": "00002",
+      "name": "加氢区"
+    },
+    {
+      "tsDataDicId": "00003",
+      "name": "洗车区"
+    },
+    {
+      "tsDataDicId": "00005",
+      "name": "返修区"
+    },
+    {
+      "tsDataDicId": "00006",
+      "name": "改装区"
+    },
+    {
+      "tsDataDicId": "00007",
+      "name": "领用区"
+    },
+    {
+      "tsDataDicId": "00008",
+      "name": "库改区"
+    },
+    {
+      "tsDataDicId": "00010",
+      "name": "二次报交区"
+    },
+    {
+      "tsDataDicId": "00011",
+      "name": "补件区"
+    },
+    {
+      "tsDataDicId": "00012",
+      "name": "发运PDI区"
+    },
+    {
+      "tsDataDicId": "00013",
+      "name": "返库PDI区"
+    },
+    {
+      "tsDataDicId": "00014",
+      "name": "底盘防锈"
+    },
+    {
+      "tsDataDicId": "00015",
+      "name": "移库区1"
+    },
+    {
+      "tsDataDicId": "00016",
+      "name": "移库区2"
+    },
+    {
+      "tsDataDicId": "00017",
+      "name": "移库区3"
+    },
+    {
+      "tsDataDicId": "00018",
+      "name": "车身喷字区"
+    },
+    {
+      "tsDataDicId": "00019",
+      "name": "待入库区1"
+    },
+    {
+      "tsDataDicId": "00020",
+      "name": "待入库区2"
+    },
+    {
+      "tsDataDicId": "00021",
+      "name": "待入库区3"
+    },
+    {
+      "tsDataDicId": "00022",
+      "name": "海外待发运区"
+    },
+    {
+      "tsDataDicId": "00023",
+      "name": "国内待发运区"
+    }
+  ]
+}

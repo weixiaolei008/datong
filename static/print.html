@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+    .clearfix::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+    #print{
+      width: 1380px;
+      height: 900px;
+    }
+    .print, .back{
+      display: inline-block;
+      width: 100px;
+      line-height: 40px;
+      height: 40px;
+      border: 1px solid #67A2FF;
+      color: #67A2FF;
+      margin-bottom: 10px;
+      text-align: center;
+      cursor: pointer;
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+    .print{
+      background: #67A2FF;
+      color: #fff;
+      margin-left: 30px;
+    }
+    .VDC:nth-child(2n){
+      border:1px solid #000000;
+      font-size: 10px;
+      width: 660px;
+      margin-left: 20px;
+      margin-bottom: 30px;
+    }
+    .VDC:nth-child(2n+1) {
+      border:1px solid #000000;
+      font-size: 10px;
+      width: 660px;
+      margin-right: 20px;
+      margin-bottom: 30px;
+    }
+    .VDC:nth-child(5) {
+      margin-bottom: 0;
+    }
+    .VDC:nth-child(6) {
+      margin-bottom: 0;
+    }
+    .header {
+      height: 20px;
+      border-bottom: 1px solid #000000
+    }
+
+    .header .title {
+      float: left;
+      width: 50%;
+      line-height: 20px;
+      text-indent: 3px
+    }
+
+    .content {
+      border-bottom: 1px solid #000000
+    }
+
+    .fitem {
+      float: left;
+      width: 50%;
+      height: 18px;
+      line-height: 18px;
+      text-indent: 3px
+    }
+    .info {
+      width: 16%;
+      height: 20px;
+      line-height: 20px;
+      text-indent: 3px;
+      border-right: 1px solid #000000;
+      float: left;
+    }
+    .info .unit {
+      margin-left:20px;
+    }
+  </style>
+</head>
+
+<body>
+<div id='print'>
+  <div class="clearfix">
+    <div class="VDC " v-for='(item, index) in list' style="float: left">
+      <div class="header">
+        <span class="title">{{item.name}}</span>
+        <span class="title" style="width: 60px;">制单日期:</span>
+        <span class="title" style="width: 200px;" v-html="item.printTime"></span>
+      </div>
+      <div class="content clearfix">
+        <div class="detail">
+          <div class="fitem">
+            <label for="">收车单位:</label>
+            <span v-html="item.destinationityName"></span>
+          </div>
+          <div class="fitem" >
+            <div v-show="index == 0 || index == 3">
+              <label for="">加急:</label>
+              <input style="vertical-align:middle" disabled type="checkbox">
+              <span style="margin-right:10px">是</span>
+              <input style="vertical-align:middle" disabled type="checkbox">
+              <span>否</span>
+            </div>
+          </div>
+          <div class="fitem">
+            <label for="">收货地址:</label>
+            <span v-html="item.destinationityAddress"></span>
+          </div>
+          <div class="fitem">
+          </div>
+          <div class="fitem" style="height: 40px;width: 100%;">
+            <label for="">运输节点分段信息:</label>
+            <span v-for="i in item.segmentRoute" v-html="i"
+                  style="display: inline-block; width: 45px;margin-right: 5px;text-indent: 0;
+                  font-size: 10px;
+                  text-align: center;border-bottom: 1px solid #000"></span>
+          </div>
+          <div class="fitem">
+            <label for="">车型:</label>
+            <span v-html="item.vhModelColor"></span>
+          </div>
+          <div class="fitem">
+          </div>
+          <div class="fitem">
+            <label for="">VIN码:</label>
+            <span v-html="item.vin"></span>
+          </div>
+          <div class="fitem" style="position: relative">
+            <label for="">订单号:</label>
+            <span v-html="item.orderCode"></span>
+            <div class='qrcode' style="position:absolute;top: -16px;px;left:140px"></div>
+          </div>
+          <div class="fitem" style="height:50px;position: relative;">
+            <label for="">条形码:</label>
+            <img class='barcode' style="width:200px;height:40px;position: absolute">
+          </div>
+
+          <div class="fitem" style="clear:both">
+            <label for="">承运商:</label>
+            <span v-html="item.carrier"></span>
+          </div>
+
+          <div class="fitem">
+            <div v-show="index == 0 || index == 3">
+              <label for="">合格证状态:</label>
+              <input style="vertical-align:middle" disabled :checked="item.plant=='01'" type="checkbox">
+              <span style="margin-right:15px">随</span>
+              <input style="vertical-align:middle" disabled :checked="item.plant=='02'" type="checkbox">
+              <span style="margin-right:15px">不随</span>
+              <input style="vertical-align:middle" disabled :checked="item.plant=='03'" type="checkbox">
+              <span>随复印件</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-if="!item.foot" class="footer">
+        <div v-if="index != 1" class="clearfix" style="border-bottom: 1px solid #000000">
+          <div class="info">
+            <label>合格证:</label>
+            <span class="unit">本</span>
+          </div>
+          <div class="info">
+            <label>灭火器:</label>
+            <span class="unit">套</span>
+          </div>
+          <div class="info">
+            <label>工具:</label>
+            <span class="unit">套</span>
+          </div>
+          <div class="info">
+            <label>反光背心:</label>
+            <span class="unit">件</span>
+          </div>
+          <div class="info">
+            <label>说明书:</label>
+            <span class="unit">本</span>
+          </div>
+          <div class="info" style="width:19%;border-right:none">
+            <label>服务质量卡:</label>
+            <span class="unit">张</span>
+          </div>
+        </div>
+        <div v-if="index != 1" class="clearfix" style="border-bottom: 1px solid #000000">
+          <div class="info" style="">
+            <label>车辆照片:</label>
+            <span class="unit">张</span>
+          </div>
+          <div class="info">
+            <label>SD卡:</label>
+            <span class="unit">张</span>
+          </div>
+          <div class="info">
+            <label>导航卡:</label>
+            <span class="unit">张</span>
+          </div>
+          <div class="info">
+            <label>电瓶紧固:</label>
+            <input type="checkbox" disabled style="vertical-align: middle;margin-left: 5px;">
+          </div>
+          <div class="info">
+
+          </div>
+          <div class="info" style="width:19%;border-right:none">
+
+          </div>
+        </div>
+        <div v-if="index == 1" style="height: 41px;border-bottom: 1px solid #000000">
+        </div>
+        <div style="height:45px" v-if="index == 0">
+          <div class="fitem">
+            <label for="">发运人签字（盖章）:</label>
+            <span></span>
+          </div>
+          <div class="fitem">
+            <label for="">签收人签字（盖章）:</label>
+            <span></span>
+          </div>
+        </div>
+        <div style="height:45px" v-if="index == 2 || index == 3">
+          <div class="fitem" style="width: 30%;">
+            <label for="">签收人签字:</label>
+            <span></span>
+          </div>
+          <div class="fitem" style="width: 30%;">
+            <label for="">（盖章）:</label>
+            <span></span>
+          </div>
+          <div class="fitem" style="width: 40%;">
+            备注：
+          </div>
+        </div>
+        <div style="height:45px" v-if="index == 1 || index == 4 || index == 5 ">
+          &nbsp;备注：
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--endprint-->
+  <div style="width: 1340px;text-align: center;margin-top: 20px;">
+    <span @click="back" class="back">取消</span>
+    <span @click="doPrint" class="print">确定</span>
+  </div>
+
+</div>
+
+
+
+</body>
+<script src='./JsBarcode.all.js'></script>
+<script src='./qrcode2.js'></script>
+<script src='./vue-2.2.0.js'></script>
+
+
+<script>
+  var vm = new Vue({
+    el: "#print",
+    data: {
+      list: [
+        {
+          name: '商品车发车证明/VDC留存',
+        },
+        {
+          name: '出门单LDV门卫留存',
+        },
+        {
+          name: '经销商留存',
+        },
+        {
+          name: '商品车收车证明/驳运单位留存',
+        },
+        {
+          name: '承运商留存',
+        },
+        {
+          name: '发运部留存',
+        },
+      ]
+    },
+    methods: {
+      back(){
+        history.go(-1);
+      },
+      doPrint() {
+        let bdhtml=window.document.body.innerHTML;
+        let str = window.document.body.innerHTML;
+        // console.log(bdhtml);
+        let eprnstr="<!--endprint-->";
+       let len = bdhtml.indexOf(eprnstr);
+        bdhtml=bdhtml.substring(0,len - 884);
+        // console.log(bdhtml);
+        window.document.body.innerHTML=bdhtml;
+        window.print();
+      },
+      initQr(className, index, order) {
+        new QRCode2.default(document.getElementsByClassName(className)[index], {
+          text: order,
+          width: 80,
+          height: 80,
+          colorDark: '#000000',
+          colorLight: '#ffffff',
+        });
+      },
+      initBar(className, index, vin) {
+        var barcode = document.getElementsByClassName(className)[index],
+          options = {
+            width: 2, //较细处条形码的宽度
+            height: 100, //条形码的宽度，无高度直接设置项，由位数决定，可以通过CSS去调整，见下
+            quite: 10,
+            format: "CODE128",
+            displayValue: false, //是否在条形码下方显示文字
+            font: "monospace",
+            textAlign: "center",
+            fontSize: 12,
+            backgroundColor: "",
+            lineColor: "#000" //条形码颜色
+          }
+        JsBarcode(barcode, vin, options)
+      }
+    },
+    mounted: function () {
+      let self = this;
+      for (var i = 0; i < this.list.length; i++) {
+        // console.log(i)
+        this.initQr('qrcode', i, this.list[i].orderCode)
+        this.initBar('barcode', i, this.list[i].vin)
+      }
+      setTimeout(function () {
+        self.doPrint()
+      },600)
+    },
+    created: function () {
+      let row = JSON.parse(sessionStorage.getItem('_order'));
+      let arr = row.segmentRoute.split(',');
+      this.list = this.list.map(item => {
+        return Object.assign({}, item, row, {segmentRoute: arr})
+      })
+    }
+  })
+</script>
+
+</html>

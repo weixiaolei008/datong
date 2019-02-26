@@ -1,0 +1,262 @@
+// image
+//@image: "@/common/image";
+// color
+@blue: #67A2FF;
+@grren: #00CC99;
+@red: #FF7272;
+@pink: #F084A3;
+@purple: #B68BFF;
+@lightblue: #63CFE0;
+@gray: #666;
+
+// font
+@f12: 12px;
+@f14: 14px;
+@f15: 15px;
+@f16: 16px;
+
+// btn-group
+.btn-group ,.search-box{
+  div{
+    float: left;
+  }
+}
+
+.btn {
+  min-width: 40px;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  margin-right: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: @f12;
+}
+
+.span {
+  display: inline-block;
+  padding: 0 1em 0 3em;
+}
+
+// 新增
+.btn-add:extend(.btn) {
+  background: @blue;
+  span {
+    .span
+  }
+}
+
+//接受
+.btn-receive:extend(.btn) {
+  background: @grren;
+  span {
+    .span
+  }
+}
+
+//删除
+.btn-del:extend(.btn) {
+  background: @red;
+  span {
+    .span
+  }
+}
+
+// 通知
+.btn-inform:extend(.btn) {
+  background: @pink;
+  span {
+    .span
+  }
+}
+
+//导入
+.btn-import:extend(.btn) {
+  background: @lightblue;
+  span {
+    .span
+  }
+}
+
+//导出
+.btn-export:extend(.btn) {
+  background: @purple;
+  span {
+    .span
+  }
+}
+//vdc移库
+.btn-vdc-move:extend(.btn) {
+  background: #1F82E6;
+  span {
+    .span
+  }
+}
+//立即修
+.btn-repair-first:extend(.btn) {
+  background: #0C4AAC;
+  span {
+    .span
+  }
+}
+//缓修
+.btn-repair-second:extend(.btn) {
+  background: #1F82E6;
+  span {
+    .span
+  }
+}
+//出库修
+.btn-repair-out:extend(.btn) {
+  background: #7D8CFC;
+  span {
+    .span
+  }
+}
+.btn-group{
+  padding: 0 10px;
+}
+// search-group
+.search-group{
+  padding: 20px 10px 0 10px;
+  position: relative;
+}
+// input-box
+.input-box {
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 0 15px 15px 0;
+  .input-label{
+    width: 85px;
+    line-height: 40px;
+    float: left;
+    display: block;
+    text-align: right;
+    margin-right: 15px;
+    color: @gray;
+    font-size: @f14;
+    span{
+      color: @red;
+    }
+  }
+  .el-input {
+    width: 200px;
+    height: 40px;
+    float: left;
+    input{
+      height: inherit;
+    }
+  }
+  .el-select{
+    width: 200px;
+    height: 40px;
+    float: left;
+    input{
+      height: inherit;
+    }
+  }
+  .el-textarea{
+    width: 200px;
+    height: 95px;
+  }
+}
+.input-sm-box{
+  width: auto;
+  height: auto;
+  float: left;
+  margin: 0 15px 15px 0;
+  .input-label{
+    width: 85px;
+    line-height: 40px;
+    float: left;
+    display: block;
+    text-align: right;
+    margin-right: 15px;
+    color: @gray;
+    font-size: @f14;
+    span{
+      color: @red;
+    }
+  }
+  .el-input {
+    width: 200px;
+    height: 40px;
+    float: left;
+    input{
+      height: inherit;
+    }
+  }
+  .el-select{
+    width: 100px;
+    height: 40px;
+    float: left;
+    input{
+      height: inherit;
+    }
+  }
+  .el-textarea{
+    width: 200px;
+    height: 95px;
+  }
+}
+.search-box{
+  margin-top: 5px;
+  float: right;
+}
+.search-sub:extend(.btn){
+  border: 1px solid @blue;
+  color: @blue;
+  span {
+    .span
+  }
+}
+.search-reset:extend(.btn){
+  border: 1px solid @red;
+  color: @red;
+  span {
+    .span
+  }
+}
+.radio-box{
+  position: absolute;
+}
+.title-group {
+  width: auto;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  .icon-title{
+    font-size: 16px;
+    font-weight: bold;
+    color: #796AC1;
+    padding-left: 30px;
+    position: absolute;
+    left: 20px;
+  }
+  .btn-group{
+    div{
+      float: right;
+    }
+  }
+}
+//tab
+.header-tabs{
+  padding-left: 20px;
+  height: 48px;
+  color: #666;
+  border-bottom: 1px solid #f1f1f1;
+}
+.header-tab-item{
+  display: inline-block;
+  padding: 0 10px;
+  margin: 0 15px;
+  line-height: 46px;
+  text-align: center;
+  cursor: pointer;
+}
+.header-tab-active {
+  color: @blue;
+  border-bottom: 2px solid @blue;
+}
+
